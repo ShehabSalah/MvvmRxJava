@@ -1,19 +1,23 @@
-package com.example.staff.mvvmrxjava;
+package com.example.staff.mvvmrxjava.views.adapters;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.example.staff.mvvmrxjava.models.NewsModel;
+import com.example.staff.mvvmrxjava.view_models.NewsViewModel;
+import com.example.staff.mvvmrxjava.R;
 import com.example.staff.mvvmrxjava.databinding.ListItemBinding;
 
 import java.util.List;
 
 /**
  * Created by staff on 2017-10-04.
+ * News List Adapter
  */
 
-class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.BindingHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.BindingHolder> {
 
     private List<NewsModel> mNews;
 
@@ -31,7 +35,7 @@ class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.BindingHolder> {
     @Override
     public void onBindViewHolder(BindingHolder holder, int position) {
         ListItemBinding binding = holder.binding;
-        binding.setNews(mNews.get(position));
+        binding.setNvm(new NewsViewModel(mNews.get(position)));
     }
 
     @Override

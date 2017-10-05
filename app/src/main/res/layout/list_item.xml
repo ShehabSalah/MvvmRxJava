@@ -3,33 +3,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="news" type="com.example.staff.mvvmrxjava.NewsModel" />
-        <variable name="view" type="android.view.View" />
+        <variable name="nvm"
+            type="com.example.staff.mvvmrxjava.view_models.NewsViewModel" />
     </data>
 
     <LinearLayout
         android:id="@+id/news_holder"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:background="@color/white"
-        android:onClick="@{news.onItemClicked(news.title)}">
+        android:onClick="@{nvm.onItemClicked(nvm.title)}">
         <ImageView
             android:id="@+id/news_image"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
             android:contentDescription="@string/app_name"
-
-            app:image="@{news.image}"
+            app:image="@{nvm.imageUrl}"
             />
         <TextView
             android:id="@+id/news_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="@{news.title}"
+            android:text="@{nvm.title}"
             tools:text="News Title"/>
 
 
