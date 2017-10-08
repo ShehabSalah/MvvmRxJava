@@ -36,14 +36,14 @@ public class NewsViewModel extends BaseObservable {
     }
 
     public String getImageUrl() {
-        return mNews.getImagePath();
+        return mNews.getNews_image();
     }
 
     @BindingAdapter({"image"})
     public static void loadImage(ImageView view, String url) {
-        Log.e(TAG,"http://www.stadvodafone.com/"+url);
+        Log.e(TAG,"http://184.105.143.214:8080/vodafone_studio/api/"+url);
         Picasso.with(view.getContext())
-                .load("http://www.stadvodafone.com/"+url)
+                .load("http://184.105.143.214:8080/vodafone_studio/api/"+url)
                 .resize(720,480)
                 .centerCrop().into(view);
     }
@@ -51,5 +51,15 @@ public class NewsViewModel extends BaseObservable {
     public View.OnClickListener onItemClicked(final String title) {
         return view -> Toast.makeText(view.getContext(), "news: " + title, Toast.LENGTH_SHORT).show();
     }
+
+   /* @BindingAdapter("touchListener")
+    public View.OnScrollChangeListener onItemScroll(){
+        return new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View view, int i, int i1, int i2, int i3) {
+
+            }
+        };
+    }*/
 
 }

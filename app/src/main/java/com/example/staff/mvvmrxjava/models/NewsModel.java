@@ -5,17 +5,17 @@ package com.example.staff.mvvmrxjava.models;
  *
  */
 
-public class NewsModel{
+public class   NewsModel{
     private int id;
     private String title;
     private String body;
-    private String imagePath;
+    private String news_image;
     private String shortLink;
 
     public NewsModel(String title, String body, String imagePath) {
         this.title = title;
         this.body = body;
-        this.imagePath = imagePath;
+        this.news_image = imagePath;
     }
 
     public String getTitle() {
@@ -42,12 +42,12 @@ public class NewsModel{
         this.id = id;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getNews_image() {
+        return news_image;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setNews_image(String news_image) {
+        this.news_image = news_image;
     }
 
     public String getShortLink() {

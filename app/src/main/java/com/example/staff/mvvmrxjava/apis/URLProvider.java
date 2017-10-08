@@ -16,6 +16,6 @@ import rx.Observable;
  */
 
 public interface URLProvider {
-    @GET(Config.GET_REQUEST)
-    Observable<ArrayList<NewsModel>> getAllNews(@Query(Config.API_KEY_PARAM) String paramValue);
+    @GET(Config.NEWS_API)
+    Observable<ArrayList<NewsModel>> getAllNews(@Query(Config.ORDER_PARAM) String order, @Query(Config.PAGE_PARAM) String page);
 }

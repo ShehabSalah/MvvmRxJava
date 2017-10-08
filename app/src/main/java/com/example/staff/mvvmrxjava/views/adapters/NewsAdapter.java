@@ -1,5 +1,6 @@
 package com.example.staff.mvvmrxjava.views.adapters;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,6 +37,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.BindingHolder>
     public void onBindViewHolder(BindingHolder holder, int position) {
         ListItemBinding binding = holder.binding;
         binding.setNvm(new NewsViewModel(mNews.get(position)));
+        if (position == mNews.size() - 1){
+
+        }
     }
 
     @Override
@@ -50,5 +54,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.BindingHolder>
             super(binding.newsHolder);
             this.binding = binding;
         }
+    }
+
+    public void AddAnotherPageToExistingOne(List<NewsModel> mNews){
+        this.mNews.addAll(mNews);
+        notifyDataSetChanged();
     }
 }
