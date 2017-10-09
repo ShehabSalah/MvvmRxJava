@@ -1,12 +1,11 @@
 package com.example.staff.mvvmrxjava.views.adapters;
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.example.staff.mvvmrxjava.models.NewsModel;
+import com.example.staff.mvvmrxjava.models.NewsListItemModel;
 import com.example.staff.mvvmrxjava.view_models.NewsViewModel;
 import com.example.staff.mvvmrxjava.R;
 import com.example.staff.mvvmrxjava.databinding.ListItemBinding;
@@ -20,9 +19,9 @@ import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.BindingHolder> {
 
-    private List<NewsModel> mNews;
+    private List<NewsListItemModel> mNews;
 
-    public NewsAdapter(List<NewsModel> mNews) {
+    public NewsAdapter(List<NewsListItemModel> mNews) {
         this.mNews = mNews;
     }
     @Override
@@ -37,9 +36,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.BindingHolder>
     public void onBindViewHolder(BindingHolder holder, int position) {
         ListItemBinding binding = holder.binding;
         binding.setNvm(new NewsViewModel(mNews.get(position)));
-        if (position == mNews.size() - 1){
-
-        }
     }
 
     @Override
@@ -56,7 +52,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.BindingHolder>
         }
     }
 
-    public void AddAnotherPageToExistingOne(List<NewsModel> mNews){
+    public void AddAnotherPageToExistingOne(List<NewsListItemModel> mNews){
         this.mNews.addAll(mNews);
         notifyDataSetChanged();
     }

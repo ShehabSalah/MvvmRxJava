@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.staff.mvvmrxjava.BR;
-import com.example.staff.mvvmrxjava.models.NewsModel;
+import com.example.staff.mvvmrxjava.models.NewsListItemModel;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -19,9 +19,9 @@ import com.squareup.picasso.Picasso;
 
 public class NewsViewModel extends BaseObservable {
     private static final String TAG = NewsViewModel.class.getSimpleName();
-    private NewsModel mNews;
+    private NewsListItemModel mNews;
 
-    public NewsViewModel(NewsModel mNews) {
+    public NewsViewModel(NewsListItemModel mNews) {
         this.mNews = mNews;
     }
 
@@ -52,14 +52,5 @@ public class NewsViewModel extends BaseObservable {
         return view -> Toast.makeText(view.getContext(), "news: " + title, Toast.LENGTH_SHORT).show();
     }
 
-   /* @BindingAdapter("touchListener")
-    public View.OnScrollChangeListener onItemScroll(){
-        return new View.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(View view, int i, int i1, int i2, int i3) {
-
-            }
-        };
-    }*/
 
 }

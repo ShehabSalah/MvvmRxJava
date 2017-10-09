@@ -30,7 +30,5 @@
             android:padding="16dp"
             android:text="@{nvm.title}"
             tools:text="News Title"/>
-
-
     </LinearLayout>
 </layout>

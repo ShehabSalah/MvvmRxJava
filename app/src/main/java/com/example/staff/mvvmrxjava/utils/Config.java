@@ -11,6 +11,7 @@ public class Config {
     public static final String NEWS_API         = "news_api.php";
     public static final String RECENT_ORDER     = "recent";
     public static final String ORDER_PARAM      = "order";
+    public static final String NEWS_ID_PARAM    = "news_id";
     public static final String PAGE_PARAM       = "page";
     public static final String API_KEY_PARAM    = "api_key";
     public static final String API_KEY_VAL      = "1b5521b0-4604-4981-98c6-ad54338f3326";

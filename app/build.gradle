@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    dataBinding {enabled = true}
+    dataBinding { enabled = true }
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
@@ -39,18 +39,19 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$supportVersion"
     compile "com.android.support:support-annotations:$supportVersion"
 
+
+
+
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.squareup.picasso:picasso:2.5.2'
-
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
-
     compile 'io.reactivex:rxandroid:1.2.0'
     compile 'io.reactivex:rxjava:1.1.8'
-
     testCompile 'junit:junit:4.12'
 }
+
 
 
